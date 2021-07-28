@@ -13,11 +13,17 @@ Shove it inside tf_custom_attributes.txt if you want to replace a normal weapon'
 
 Example: `0.4` ( 60% less knockback )
 
-## Other info
+## Dependencies
+
+[Dhooks](https://github.com/peace-maker/DHooks2)
 
 You might need [this dependency as well](https://github.com/nosoop/stocksoup) if you want to compile it yourself.
 
+## Other info
+
 This plugin uses Nosoop's [Ninja](https://github.com/nosoop/NinjaBuild-SMPlugin) template. Easy to organize everything and build releases. I'd recommend to check it out.
+
+#
 
 Please, this is the first version of this plugin. If you find any issues, make sure to open an issue to let me know!
 
