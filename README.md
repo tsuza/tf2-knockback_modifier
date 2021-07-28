@@ -3,6 +3,8 @@
 Custom Attribute using Nosoop's [custom attributes framework](https://github.com/nosoop/SM-TFCustAttr). 
 This plugin lets you change the knockback of a weapon.
 
+[Alliedmodders post](https://forums.alliedmods.net/showthread.php?t=333657).
+
 ## How to apply the attribute
 
 `"knockback modifier" 	"value"`
