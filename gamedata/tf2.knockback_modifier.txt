@@ -1,0 +1,47 @@
+"Games"
+{
+	"tf"
+	{	
+		"Functions"
+		{
+			"CTFPlayer::ApplyPushFromDamage()"
+			{
+				"signature"		"CTFPlayer::ApplyPushFromDamage()"
+				"callconv"		"thiscall"
+				"return"		"void"
+				"this"			"entity"
+				"arguments"
+				{
+					"damage_info"
+					{
+						"type"	"int"
+					}
+					"damage_x"
+					{
+						"type"	"float"
+					}
+					"damage_y"
+					{
+						"type"	"float"
+					}
+					"damage_z"
+					{
+						"type"	"float"
+					}
+				}
+			}
+		}
+		
+		"Signatures"
+		{
+			"CTFPlayer::ApplyPushFromDamage()"
+			{
+				// unuqie x-ref "damage_blast_push"
+				"library"	"server"
+				"linux"		"@_ZN9CTFPlayer19ApplyPushFromDamageERK15CTakeDamageInfo6Vector"
+				"windows"	"\x55\x8B\xEC\xA1\x2A\x2A\x2A\x2A\x83\xEC\x28\x83\x78\x30\x00\x53"
+			}
+
+		}
+	}
+}
