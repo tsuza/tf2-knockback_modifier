@@ -1,48 +1,24 @@
-# Ninja Project Template for SourceMod Plugins
+# Knockback Modifier
 
-A project repository template that builds SourceMod plugins with [Ninja][].
+Custom Attribute using Nosoop's [custom attributes framework](https://github.com/nosoop/SM-TFCustAttr). 
+This plugin lets you change the knockback of a weapon.
 
-[Ninja]: https://ninja-build.org/
+## How to apply the attribute
 
-## Setup
+`"knockback modifier" 	"value"`
 
-Make sure to read over and download the things specified in the [Prerequisites][] page.
+Shove it inside tf_custom_attributes.txt if you want to replace a normal weapon's model ( or anything else that supports custom attributes ) or in the Custom Attribuets section inside a custom weapon's cfg if you use Custom Weapons X.
 
-1. [Use this template][] to create a new repository, then clone the resulting repository
-locally.
-	- If this is your first time with the template, verify that the prerequisites have been
-	successfully installed by following the building instructions; the project is configured by
-	default to compile `scripting/sample_plugin.sp` to `build/plugins/sample_plugin.smx`.
-	- If you have an existing repository, you may want to instead copy `configure.py` and
-	`misc/`, as well as create / update your `.gitignore` to exclude generated outputs
-	(see this repository's version).
-2. Configure the project for your needs.
-	- Create script(s) in the `scripting/` directory.
-	- Add script(s) to the `plugins` list in the `configure.py` file.
-	Only scripts compiled directly should be added (that is, don't add `#include`d `.sp` files).
-	- Add file paths that you want to copy to the build output (gamedata, configs, include,
-	non-base scripts) to the `copy_files` list.
-	- Look over the rest of `configure.py` and modify settings to your liking.
-	- Update / remove this `README` file!  You'll want to provide building steps similar to the
-	ones below.
+**value**: 1.0 is the default knockback. 0.5 would be half of the original knockback and 1.5 would be 50% more knockback. You can change it as much as you want, even remove it by putting 0.0.
 
-[Prerequisites]: https://github.com/nosoop/NinjaBuild-SMPlugin/wiki/Prerequisites
-[Use this template]: https://github.com/nosoop/NinjaBuild-SMPlugin/generate
+Example: `0.4` ( 60% less knockback )
 
-## Building
+## Other info
 
-1. Run `python configure.py --spcomp-dir {DIR}` within the project root, where `{DIR}` is a
-directory containing the SourcePawn compiler (`spcomp`) and SourceMod's base include files.
-This will create the `build.ninja` script.
-	- If `--spcomp-dir` isn't specified, the script will try to detect the compiler based on an
-	existing `spcomp` executable in your path.
-	- It is highly preferred that you use a toolchain that is free of third-party include
-	files; those files should be added to the project directly.
-	- Do not add `build.ninja` to version control; it should always be generated from
-	`configure.py`.
-2. Run `ninja`; this will read the `build.ninja` script and build things as necessary.  Files
-will be generated and copied to `build/`, creating any intermediate folders if they don't exist.
-Re-run `ninja` whenever you make changes; it will also reconfigure the build if `configure.py`
-is modified.
-	- Any files removed from `configure.py` will remain in `build/`; run `ninja -t cleandead`
-	to remove any lingering files.
+You might need [this dependency as well](https://github.com/nosoop/stocksoup) if you want to compile it yourself.
+
+This plugin uses Nosoop's [Ninja](https://github.com/nosoop/NinjaBuild-SMPlugin) template. Easy to organize everything and build releases. I'd recommend to check it out.
+
+Please, this is the first version of this plugin. If you find any issues, make sure to open an issue to let me know!
+
+Also I've got no clue how to properly format this.
