@@ -16,7 +16,9 @@ Example: `0.4` ( 60% less knockback )
 ## Dependencies
 
 [Dhooks](https://github.com/peace-maker/DHooks2)
+
 [Custom Attributes Framework](https://github.com/nosoop/SM-TFCustAttr)
+
 [TF2 Attributes](https://github.com/nosoop/tf2attributes)
 
 You might need [this dependency as well](https://github.com/nosoop/stocksoup) if you want to compile it yourself.
