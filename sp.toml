@@ -1,0 +1,11 @@
+[[dependency]]
+url = "https://github.com/FlaminSarge/tf2attributes/blob/0c65c0c44c2b21c8a59ff62cff8f3cbe0679d579/scripting/include/tf2attributes.inc"
+path = "."
+
+[[dependency]]
+url = "https://github.com/nosoop/SM-TFCustAttr/blob/c266b6e5c29c8c0890607fe2b807f3d6166bff82/scripting/include/tf_custom_attributes.inc"
+path = "."
+
+[[dependency]]
+url = "https://github.com/nosoop/stocksoup/blob/5ba97166935245a08b8cc807ae65c78d9f93f504/memory.inc"
+path = "stocksoup"
