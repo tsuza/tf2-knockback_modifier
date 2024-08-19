@@ -16,12 +16,12 @@
 #pragma newdecls required
 
 #define PLUGIN_NAME         "[TF2-CA] Knockback Modifier"
-#define PLUGIN_AUTHOR       "zabaniya001"
+#define PLUGIN_AUTHOR       "tsuza"
 #define PLUGIN_DESCRIPTION  "Utilizes Nosoop's Framework. It lets you change the knockback of weapons."
 #define PLUGIN_VERSION      "0.1.0"
-#define PLUGIN_URL          "https://github.com/Zabaniya001"
+#define PLUGIN_URL          "https://github.com/tsuza/TF2CA-weaponmodel_override"
 
-public Plugin myinfo = 
+public Plugin myinfo =
 {
     name        =   PLUGIN_NAME,
     author      =   PLUGIN_AUTHOR,
@@ -63,7 +63,7 @@ enum eTakeDamageInfo: (+= 0x04) {
 // ||                               SOURCEMOD API                              ||
 // ||──────────────────────────────────────────────────────────────────────────||
 
-public void OnPluginStart() 
+public void OnPluginStart()
 {
     GameData hGameConf = new GameData("tf2.knockback_modifier");
 
@@ -88,7 +88,7 @@ public void OnPluginStart()
 // ||──────────────────────────────────────────────────────────────────────────||
 
 // void CTFPlayer::ApplyPushFromDamage( const CTakeDamageInfo &info, Vector vecDir )
-public MRESReturn OnApplyPushFromDamagePre(int iClient, DHookParam hParams) 
+public MRESReturn OnApplyPushFromDamagePre(int iClient, DHookParam hParams)
 {
     // Getting the address of const CTakeDamageInfo &info.
     Address aTakeDamageInfo = hParams.Get(1);
@@ -122,7 +122,7 @@ public MRESReturn OnApplyPushFromDamagePre(int iClient, DHookParam hParams)
 }
 
 // void CTFPlayer::ApplyPushFromDamage( const CTakeDamageInfo &info, Vector vecDir )
-public MRESReturn OnApplyPushFromDamagePost(int iClient, DHookParam hParams) 
+public MRESReturn OnApplyPushFromDamagePost(int iClient, DHookParam hParams)
 {
     // Getting the address of const CTakeDamageInfo &info.
     Address aTakeDamageInfo = hParams.Get(1);
@@ -146,7 +146,7 @@ public MRESReturn OnApplyPushFromDamagePost(int iClient, DHookParam hParams)
     if(fModifyKnockback == 0.0)
         fModifyKnockback = 0.00001;
 
-    // Retrieving the original knockback ( the one before we changed theirs ) by doing math. 
+    // Retrieving the original knockback ( the one before we changed theirs ) by doing math.
     float fOldKnockback = TF2Attrib_GetFloatValueFromName(iClient, "damage force increase hidden") / fModifyKnockback;
 
     TF2Attrib_RemoveCustomPlayerAttribute(iClient, "damage force increase hidden");
@@ -170,11 +170,11 @@ stock bool IsValidClient(int client)
 
     if(GetEntProp(client, Prop_Send, "m_bIsCoaching"))
         return false;
-    
+
     return true;
 }
 
-Address AddressOffset(Address pAddr, int iOffset) 
+Address AddressOffset(Address pAddr, int iOffset)
 {
     return pAddr + view_as<Address>(iOffset);
 }
