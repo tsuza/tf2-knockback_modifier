@@ -31,6 +31,36 @@ public Plugin myinfo =
 }
 
 // ||──────────────────────────────────────────────────────────────────────────||
+// ||                              GLOBAL VARIABLES                            ||
+// ||──────────────────────────────────────────────────────────────────────────||
+
+// Upstream sourcepawn has removed enum multiplication, so I can't implicitly multiply this by 0x04.
+enum eTakeDamageInfo {
+    // Vectors.
+    m_DamageForce,
+    m_DamagePosition = 12,
+    m_ReportedPosition = 24,
+
+    m_Inflictor = 36,
+    m_Attacker,
+    m_Weapon,
+    m_Damage,
+    m_MaxDamage,
+    m_BaseDamage,
+    m_BitsDamageType,
+    m_DamageCustom,
+    m_DamageStats,
+    m_AmmoType,
+    m_DamagedOtherPlayers,
+    m_PlayerPenetrationCount,
+    m_DamageBonus,
+    m_DamageBonusProvider,
+    m_ForceFriendlyFire,
+    m_DamageForForce,
+    m_CritType
+};
+
+// ||──────────────────────────────────────────────────────────────────────────||
 // ||                               SOURCEMOD API                              ||
 // ||──────────────────────────────────────────────────────────────────────────||
 
@@ -65,7 +95,7 @@ public MRESReturn OnApplyPushFromDamagePre(int iClient, DHookParam hParams)
     Address aTakeDamageInfo = hParams.Get(1);
 
     // Retrieving the weapon entity by offsetting the address above.
-    int iWeapon = LoadEntityHandleFromAddress(AddressOffset(aTakeDamageInfo, m_Weapon));
+    int iWeapon = LoadEntityHandleFromAddress(AddressOffset(aTakeDamageInfo, m_Weapon * 0x04));
 
     if(iWeapon <= 0 || !IsValidEntity(iWeapon))
         return MRES_Ignored;
@@ -99,7 +129,7 @@ public MRESReturn OnApplyPushFromDamagePost(int iClient, DHookParam hParams)
     Address aTakeDamageInfo = hParams.Get(1);
 
     // Retrieving the weapon entity by offsetting the address above.
-    int iWeapon = LoadEntityHandleFromAddress(AddressOffset(aTakeDamageInfo, m_Weapon));
+    int iWeapon = LoadEntityHandleFromAddress(AddressOffset(aTakeDamageInfo, m_Weapon * 0x04));
 
     if(iWeapon <= 0 || !IsValidEntity(iWeapon))
         return MRES_Ignored;
