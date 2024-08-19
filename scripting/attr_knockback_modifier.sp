@@ -31,35 +31,6 @@ public Plugin myinfo =
 }
 
 // ||──────────────────────────────────────────────────────────────────────────||
-// ||                              GLOBAL VARIABLES                            ||
-// ||──────────────────────────────────────────────────────────────────────────||
-
-enum eTakeDamageInfo: (+= 0x04) {
-    // Vectors.
-    m_DamageForce,
-    m_DamagePosition = 12,
-    m_ReportedPosition = 24,
-
-    m_Inflictor = 36,
-    m_Attacker,
-    m_Weapon,
-    m_Damage,
-    m_MaxDamage,
-    m_BaseDamage,
-    m_BitsDamageType,
-    m_DamageCustom,
-    m_DamageStats,
-    m_AmmoType,
-    m_DamagedOtherPlayers,
-    m_PlayerPenetrationCount,
-    m_DamageBonus,
-    m_DamageBonusProvider,
-    m_ForceFriendlyFire,
-    m_DamageForForce,
-    m_CritType
-};
-
-// ||──────────────────────────────────────────────────────────────────────────||
 // ||                               SOURCEMOD API                              ||
 // ||──────────────────────────────────────────────────────────────────────────||
 
