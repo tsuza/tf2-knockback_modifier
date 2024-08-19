@@ -7,5 +7,5 @@ url = "https://github.com/nosoop/SM-TFCustAttr/blob/c266b6e5c29c8c0890607fe2b807
 path = "."
 
 [[dependency]]
-url = "https://github.com/nosoop/stocksoup/blob/5ba97166935245a08b8cc807ae65c78d9f93f504/memory.inc"
+url = "https://github.com/nosoop/stocksoup/tree/5ba97166935245a08b8cc807ae65c78d9f93f504"
 path = "stocksoup"
