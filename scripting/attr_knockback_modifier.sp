@@ -18,7 +18,7 @@
 #define PLUGIN_NAME         "[TF2-CA] Knockback Modifier"
 #define PLUGIN_AUTHOR       "tsuza"
 #define PLUGIN_DESCRIPTION  "Utilizes Nosoop's Framework. It lets you change the knockback of weapons."
-#define PLUGIN_VERSION      "0.1.2"
+#define PLUGIN_VERSION      "0.1.3"
 #define PLUGIN_URL          "https://github.com/tsuza/TF2CA-weaponmodel_override"
 
 public Plugin myinfo =
